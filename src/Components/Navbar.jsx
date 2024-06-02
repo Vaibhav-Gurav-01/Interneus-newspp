@@ -3,25 +3,26 @@ import PropTypes from 'prop-types'
 import { Link } from "react-router-dom";
 
 
-
 export default class Navbar extends Component {
     // static propTypes = {
     //     prop: PropTypes
     // }
-
-
+    
 
     render() {
+
+        const { darkMode, toggleDarkMode } = this.props;
+
         return (
             <>
                 <div  >
-                    <nav className="navbar navbar-expand-lg bg-secondary  shadow" >
+                    <nav className={`navbar ${darkMode ? 'dark-mode' : 'light-mode'} navbar-expand-lg bg-dark border-bottom border-primary shadow`} >
                         <div className="container-fluid">
 
                             <Link className="navbar-brand border border-primary rounded  p-1 border-opacity-50 bg-light" to="/" >
                                 <img src="/interneus.png" alt="INTERNEUS" width="auto" height="35" />{/*Interneus*/}</Link>
 
-                            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <button className="navbar-toggler bg-primary-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
 
@@ -52,8 +53,20 @@ export default class Navbar extends Component {
 
 
 
+                                <div className="form-check form-switch  ">
+                                    <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        id="flexSwitchCheckDefault"
+                                        checked={darkMode}
+                                        onChange={toggleDarkMode}
+                                    />
+
+                                </div>
                             </div >
                         </div >
+                    
+                    
                     </nav >
                 </div >
             </>

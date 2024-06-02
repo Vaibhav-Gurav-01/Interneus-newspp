@@ -40,3 +40,24 @@
 .read-the-docs {
   color: #888;
 } */
+
+
+
+/* *{
+  color: #E8E6e3;
+  background-color:#292D2F ;
+  
+} */
+
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #292D2F;
+  color: #E8E6e3;
+}
+
+/* Light Mode */
+.light-mode {
+  background-color: #E8E6e3;
+  color: #292D2F;
+}
